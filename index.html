@@ -1,107 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeria</title>
+  <title>Galeria Centralizada</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #f8f9fa;
+      margin: 0;
+      background: rgba(0, 0, 0, 0.85);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding: 3rem 1rem;
     }
+
+    .centered-container {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .text-pink {
+      color: #e83e8c;
+    }
+
     .section {
       margin-bottom: 3rem;
     }
+
     .section:nth-child(even) .col-md-6:first-child {
       order: 2;
     }
   </style>
 </head>
+
 <body>
-  <div class="container py-5">
+
+  <div class="centered-container">
 
     <div class="row section align-items-center">
       <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Imagem 1">
+        <img
+          src="https://img.freepik.com/vetores-gratis/padrao-de-linha-de-grade-abstrato-em-fundo-de-folha-de-plano_1017-54542.jpg?semt=ais_hybrid&w=740"
+          class="img-fluid rounded" alt="Imagem 1">
       </div>
       <div class="col-md-6">
-        <h3>C</h3>
-        <p>Comilona</p>
-        <p>Cética</p>
+        <h3 class="text-success">C</h3>
+        <p>Comilona (Desde el comienzo venimos hablando de comida)</p>
+        <p>Ca<strong>p</strong>richosa (Esto ya es culpa de la profesión)</p>
       </div>
     </div>
 
     <div class="row section align-items-center">
       <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Imagem 2">
+        <img
+          src="https://img.freepik.com/vetores-gratis/padrao-de-linha-de-grade-abstrato-em-fundo-de-folha-de-plano_1017-54542.jpg?semt=ais_hybrid&w=740"
+          class="img-fluid rounded" alt="Imagem 2">
       </div>
       <div class="col-md-6">
-        <h3>A</h3>
-        <p>Azarada(Alguém acabou com sua sorte)</p>
-        <p>Alma Velha</p>
+        <h3 class="text-danger">A</h3>
+        <p>Azar<strong>a</strong>da (Alguém acabou com sua sorte)</p>
+        <p>Alma Velha (Apesar de ser uma jovem dinamica, tem aquela alma de velho)</p>
       </div>
     </div>
 
     <div class="row section align-items-center">
       <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Imagem 3">
+        <img
+          src="https://img.freepik.com/vetores-gratis/padrao-de-linha-de-grade-abstrato-em-fundo-de-folha-de-plano_1017-54542.jpg?semt=ais_hybrid&w=740"
+          class="img-fluid rounded" alt="Imagem 3">
       </div>
       <div class="col-md-6">
-        <h3>R</h3>
-        <p>Risonha</p>
-        <p>Roubadora de WIFI</p>
+        <h3 class="text-info">R</h3>
+        <p>Risonha (Apesar de muitos "kkk" serem falsos ainda tem um riso facil)</p>
+        <p>Roubado<strong>r</strong>a de WIFI (O vicio do celular)</p>
       </div>
     </div>
+
     <div class="row section align-items-center">
       <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Imagem 4">
+        <img
+          src="https://img.freepik.com/vetores-gratis/padrao-de-linha-de-grade-abstrato-em-fundo-de-folha-de-plano_1017-54542.jpg?semt=ais_hybrid&w=740"
+          class="img-fluid rounded" alt="Imagem 4">
       </div>
       <div class="col-md-6">
-        <h3>O</h3>
-        <p>Obstinada</p>
-        <p>Observadora Critica</p>
+        <h3 class="text-success">O</h3>
+        <p>Obstin<strong>a</strong>da (Movida a problemas...e doce)</p>
+        <p>Observadora Crítica (Todo mundo que gosta de uma historia"chisme" tem uma critica)</p>
       </div>
+    </div>
+
+    <div class="row section align-items-center">
+      <div class="col-md-6">
+        <img
+          src="https://img.freepik.com/vetores-gratis/padrao-de-linha-de-grade-abstrato-em-fundo-de-folha-de-plano_1017-54542.jpg?semt=ais_hybrid&w=740"
+          class="img-fluid rounded" alt="Imagem 5">
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-danger">L</h3>
+        <p>LOUCA!!! (Tem uma dose de locura boa)</p>
+        <p>Linda e <strong>B</strong>rava (Fica brava facil, e, linda porque quero ver evergonada)</p>
+      </div>
+    </div>
+
+    <div class="row section align-items-center">
+      <div class="col-md-6">
+        <img
+          src="https://img.freepik.com/vetores-gratis/padrao-de-linha-de-grade-abstrato-em-fundo-de-folha-de-plano_1017-54542.jpg?semt=ais_hybrid&w=740"
+          class="img-fluid rounded" alt="Imagem 6">
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-info">I</h3>
+        <p>Introv<strong>e</strong>rtida (Não podemos negar)</p>
+        <p>Irritável (Perde a paciencia facil)</p>
+      </div>
+    </div>
+
+    <div class="row section align-items-center">
+      <div class="col-md-6">
+        <img
+          src="https://img.freepik.com/vetores-gratis/padrao-de-linha-de-grade-abstrato-em-fundo-de-folha-de-plano_1017-54542.jpg?semt=ais_hybrid&w=740"
+          class="img-fluid rounded" alt="Imagem 7">
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-success">N</h3>
+        <p>Nômade Digital (Simplesmente magnata e nomade)</p>
+        <p>Ni<strong>n</strong>ja Social (Apesar de gostar de dançar e ir em eventos, não gosta de se socializar muito)</p>
+      </div>
+    </div>
+
+    <div class="row section align-items-center">
+      <div class="col-md-6">
+        <img
+          src="https://img.freepik.com/vetores-gratis/padrao-de-linha-de-grade-abstrato-em-fundo-de-folha-de-plano_1017-54542.jpg?semt=ais_hybrid&w=740"
+          class="img-fluid rounded" alt="Imagem 8">
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-pink">A</h3>
+        <p>A<strong>s</strong>tuta (Tem muitas qualidades quieta que encanta)</p>
+        <p>Autêntica (Nunca encontrarei alguém igual, então não some)</p>
+        <p>Amável (30min de conversa e qualquer um vai ver que você é uma pessoa legal)</p>
+        <p>Admirável (Segredo mais já te admirava antes de você dizer que me admira, desde o momento que eu conheci você no Insta)</p>
+      </div>
+    </div>
+    <div class="mt-4 text-center">
+      <div id="mensagem" class="fs-3 fw-bold text-primary">_ _ _ _ _ _ _ _</div>
+    </div>
+
   </div>
-    <div class="row section align-items-center">
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Imagem 5">
-      </div>
-      <div class="col-md-6">
-        <h3>L</h3>
-        <p>LOUCA!!!</p>
-        <p>Leve</p>
-      </div>
-    </div>
-    <div class="row section align-items-center">
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Imagem 6">
-      </div>
-      <div class="col-md-6">
-        <h3>I</h3>
-        <p>Introvertida</p>
-        <p>Irritavél</p>
-      </div>
-    </div>
-    <div class="row section align-items-center">
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Imagem 6">
-      </div>
-      <div class="col-md-6">
-        <h3>N</h3>
-        <p>Nomade digital</p>
-        <p>Ninja Social</p>
-      </div>
-    </div>
-    <div class="row section align-items-center">
-      <div class="col-md-6">
-        <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Imagem 6">
-      </div>
-      <div class="col-md-6">
-        <h3>A</h3>
-        <p>Alegre</p>
-        <p>Autentica</p>
-        <p>Amável</p>
-      </div>
-    </div>
+  <script>
+    const mensagemEl = document.getElementById('mensagem');
+    const letras = [];
+    const palavraAlvo = 'PARABENS';
+
+    document.querySelectorAll('strong').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => {
+        const letra = el.textContent.toUpperCase();
+
+        if (!letras.includes(letra) && palavraAlvo.includes(letra)) {
+          letras.push(letra);
+
+          let resultado = '';
+          for (let i = 0; i < palavraAlvo.length; i++) {
+            const l = palavraAlvo[i];
+            resultado += letras.includes(l) ? l : '_';
+            resultado += ' ';
+          }
+
+          mensagemEl.textContent = resultado.trim();
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
