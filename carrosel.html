@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrossel Musical</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #e74c3c;
+    }
+
+    .carousel-inner {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-item {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .carousel-item.active {
+      position: relative;
+      justify-content: center;
+      /* centraliza horizontalmente */
+      align-items: center;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .circle {
+      width: 400px;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      justify-content: center;
+      /* centraliza horizontalmente */
+      align-items: center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      border: 8px solid white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      animation: spin 9s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Áudio -->
+  <audio id="player" autoplay loop style="display:none">
+    <source id="audioSource" src="https://media.vocaroo.com/mp3/1kp8WHUfQlSo" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Carrossel -->
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active center" data-music="https://media.vocaroo.com/mp3/1kp8WHUfQlSo"
+        data-image="https://i.ibb.co/n8LwXbyy/Mulher-e-guia-em-Retrato-Art-stico.png" data-bg="#e74c3c">
+        <div class="circle"
+          style="background-image: url('https://i.ibb.co/n8LwXbyy/Mulher-e-guia-em-Retrato-Art-stico.png');"></div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item" data-music="https://media.vocaroo.com/mp3/15wZdE9l5mIx"
+        data-image="https://i.ibb.co/n8LwXbyy/Mulher-e-guia-em-Retrato-Art-stico.png" data-bg="#2ecc71">
+        <div class="circle"
+          style="background-image: url('https://i.ibb.co/n8LwXbyy/Mulher-e-guia-em-Retrato-Art-stico.png');"></div>
+      </div>
+
+      <!--Slide 3-->
+      <div class="carousel-item center" data-music="https://media.vocaroo.com/mp3/13k2BcXiOD4F"
+        data-image="https://i.ibb.co/F4Q9DFMH/Chat-GPT-Image-Jul-13-2025-03-44-25-PM.png" alt="Chat-GPT-Image-Jul-13-2025-03-44-25-PM" data-bg="#ffcbdb">
+        <div class="circle"
+          style="background-image: url('https://i.ibb.co/n8LwXbyy/Mulher-e-guia-em-Retrato-Art-stico.png');"></div>
+      </div>
+
+    </div>
+
+    <!-- Controles -->
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Próximo</span>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const audio = document.getElementById('player');
+    const source = document.getElementById('audioSource');
+    const carouselInner = document.querySelector('#carouselExampleControls .carousel-inner');
+
+    $('#carouselExampleControls').on('slid.bs.carousel', function (e) {
+      const activeSlide = e.relatedTarget;
+      const newMusic = activeSlide.getAttribute('data-music');
+      const newImage = activeSlide.getAttribute('data-image');
+      const newBg = activeSlide.getAttribute('data-bg');
+      const circle = activeSlide.querySelector('.circle');
+
+      if (newMusic) {
+        source.src = newMusic;
+        audio.load();
+        audio.play();
+      }
+
+      if (circle && newImage) {
+        circle.style.backgroundImage = `url('${newImage}')`;
+      }
+
+      if (newBg) {
+        document.body.style.backgroundColor = newBg;
+        carouselInner.style.backgroundColor = newBg;
+      }
+    });
+
+    // Inicializa fundo ao carregar
+    window.addEventListener('load', () => {
+      const activeSlide = document.querySelector('#carouselExampleControls .carousel-item.active');
+      if (!activeSlide) return;
+
+      const initialBg = activeSlide.getAttribute('data-bg');
+      if (initialBg) {
+        document.body.style.backgroundColor = initialBg;
+        carouselInner.style.backgroundColor = initialBg;
+      }
+    });
+  </script>
+
+</body>
+
+</html>
